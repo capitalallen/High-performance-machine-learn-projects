@@ -19,7 +19,7 @@ struct timespec start, end;
  * output:
  *  R - dot product of array A and B
  */
-float dp(long N, float *pA, float *pB)
+float dp(long int N, float *pA, float *pB)
 {
     float R = 0.0;
     int j;
@@ -45,7 +45,7 @@ double sum(double arr[], int n)
 int main(int argc, char **argv)
 {
     // read arguments and convert to int
-    int vector_size = atoi(argv[1]);
+    long int vector_size = atoi(argv[1]);
     int measurements_num = atoi(argv[2]);
 
     // initalize float array
