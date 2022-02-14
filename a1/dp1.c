@@ -91,7 +91,7 @@ int main(int argc, char **argv)
     // N: 1000000 <T>: 9.999999 sec B: 9.999 GB/sec F: 9.999 FLOP/sec
     printf("N: %d; <T>: %f sec; B: %f GB/sec; F: %f Flop/sec\n", 
             vector_size, average_exe_time,bandwidth,floaps);
-    printf("neam for the execution time for the second half of the repetition: %f\n", second_half_average);
+    printf("mean for the execution time for the second half of the repetition: %f\n", second_half_average);
 
     return 0;
 }
