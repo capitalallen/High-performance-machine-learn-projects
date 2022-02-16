@@ -76,7 +76,7 @@ int main(int argc, char **argv)
     double total_time = sum(total_time_usec, measurements_num);
     double first_half_sum = sum(total_time_usec, measurements_num / 2);
     // total size of pA and pB
-    double total_size = sizeof(pA)+sizeof(pB);
+    double total_size = 2*vector_size*sizeof(float);
     // <T>
     double average_exe_time = total_time / measurements_num;
     double second_half_average = (total_time - first_half_sum) / 2;

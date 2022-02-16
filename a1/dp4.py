@@ -5,6 +5,7 @@ import numpy as np
 
 def dp(N,A,B): 
     R = 0.0
+    print("processing dp!!!!")
     for j in range(0,N):
         R += A[j]*B[j]
     return R
@@ -30,7 +31,7 @@ if __name__ == "__main__":
     
     average_time=sum(total_time)/measurement_num
     second_half_average_time=sum(total_time[int(measurement_num/2):])/(int(measurement_num/2))
-    bandwidth=(sys.getsizeof(A)+sys.getsizeof(B))*(10**-9)
+    bandwidth=(sys.getsizeof(A)+sys.getsizeof(B))/average_time*(10**-9)
     floaps=2*N/average_time
     print("dp 4")
     # N: 1000000 <T>: 9.999999 sec B: 9.999 GB/sec F: 9.999 FLOP/sec
