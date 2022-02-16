@@ -5,7 +5,7 @@ import numpy as np
 
 def dp(N,A,B): 
     R = 0.0
-    print("processing dp!!!!")
+    #print("processing dp!!!!")
     for j in range(0,N):
         R += A[j]*B[j]
     return R

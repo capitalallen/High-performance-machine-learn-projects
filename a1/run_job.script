@@ -10,11 +10,11 @@
 module purge
 module load anaconda3/2020.07
 eval "$(conda shell.bash hook)"
-conda activate env_name
+conda activate html
 # cd <path_to_your_directory>
 
-python3 dp4.py 1000000 1000
-python3 dp4.py 30000000 20
+python3 dp4.py 10000 1000
+python3 dp4.py 300000 20
 
-python3 dp5.py 1000000 1000
-python3 dp5.py 300000000 20
+#python dp5.py 1000000 1000
+#python dp5.py 300000000 20
