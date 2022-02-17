@@ -49,8 +49,8 @@ int main(int argc, char **argv)
     int measurements_num = atoi(argv[2]);
 
     // initalize float array
-    float pA[vector_size];
-    float pB[vector_size];
+    float *pA= malloc(sizeof(float) * vector_size);
+    float *pB= malloc(sizeof(float) * vector_size);
     for (int i = 0; i < vector_size; i++)
     {
         pA[i] = 1;
@@ -58,7 +58,7 @@ int main(int argc, char **argv)
     }
 
     // compute total time used for total number of measures
-    double total_time_usec[5000];
+    double total_time_usec[measurements_num];
 
     // loop by neasurements_num times
     for (int i = 0; i < measurements_num; i++)
@@ -67,7 +67,7 @@ int main(int argc, char **argv)
         dp(vector_size, pA, pB);
         clock_gettime(CLOCK_MONOTONIC, &end);
         double temp = (((double)end.tv_sec * 1000000 + (double)end.tv_nsec / 1000) - ((double)start.tv_sec * 1000000 + (double)start.tv_nsec / 1000));
-        // double bandwidth_temp = 2*vector_size*sizeof(float)/temp*pow(10,-6);
+        double bandwidth_temp = 2*vector_size*sizeof(float)*pow(10,-9)/temp*pow(10,6);
 
         // printf("index %d; bandwidth: %f, time used: %f\n",i,bandwidth_temp,temp);
         total_time_usec[i] = temp;
@@ -78,22 +78,23 @@ int main(int argc, char **argv)
     double total_time = sum(total_time_usec, measurements_num);
     double first_half_sum = sum(total_time_usec, measurements_num / 2);
     // total size of pA and pB
-    double total_size = 2*vector_size*sizeof(float);
+    double total_size = 2*vector_size*sizeof(float)*pow(10,-9);
     // <T>
     double average_exe_time = total_time / measurements_num;
-    double second_half_average = (total_time - first_half_sum) / 2;
+    // millseconds 
+    double second_half_average = (total_time - first_half_sum) / (measurements_num/2);
 
     // compute bandwidth Gb/second
     // size: bytes -> Gb 10^-9; m_second -> second: 10^6 
-    double bandwidth=total_size/average_exe_time*pow(10,-6);
 
-    // compute floaps: operations/second 
-    double floaps = ((double)2*vector_size)/(average_exe_time*pow(10,-3));
+    double bandwidth=total_size/second_half_average*pow(10,6);
+
+    // compute flops: operations/second 
+    double flops = ((double)2*vector_size)/second_half_average*pow(10,6);
 
     // N: 1000000 <T>: 9.999999 sec B: 9.999 GB/sec F: 9.999 FLOP/sec
     printf("N: %ld; <T>: %f sec; B: %.3f GB/sec; F: %.3f Flop/sec\n", 
-            vector_size, average_exe_time,bandwidth,floaps);
-    printf("mean for the execution time for the second half of the repetition: %f\n", second_half_average);
+            vector_size, second_half_average,bandwidth,flops);
 
     return 0;
 }
