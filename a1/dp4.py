@@ -27,7 +27,7 @@ if __name__ == "__main__":
         dp(N,A,B)
         end=time.monotonic() 
         # add to total_time 
-        print("index {}, time: {}".format(i,end-start))
+        # print("index {}, time: {}".format(i,end-start))
         total_time.append(end-start)
     
     average_time=sum(total_time)/measurement_num

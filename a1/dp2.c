@@ -67,7 +67,7 @@ int main(int argc, char **argv)
         clock_gettime(CLOCK_MONOTONIC,&end);
         double temp = (((double)end.tv_sec * 1000000 + (double)end.tv_nsec / 1000) - ((double)start.tv_sec * 1000000 + (double)start.tv_nsec / 1000));
         
-        printf("index %d; time used: %f\n",i,temp);
+	//printf("index %d; time used: %f\n",i,temp);
         total_time_usec[i] = temp;
     }
     // compute average execution time 
