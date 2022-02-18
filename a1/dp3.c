@@ -25,6 +25,7 @@ struct timespec start, end;
 float bdp(long N, float *pA, float *pB)
 {
     float R = cblas_sdot(N, pA, 1, pB, 1);
+    printf("result %f\n",R);
     return R;
 }
 
