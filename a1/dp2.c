@@ -87,11 +87,11 @@ int main(int argc, char **argv)
     double bandwidth=total_size/second_half_average*pow(10,-3);
 
     // compute floaps: operations/second 
-    double floaps =  ((double)7*vector_size)/second_half_average*pow(10,6);
+    double flops =  ((double)8*vector_size)/second_half_average*pow(10,6);
 
     // N: 1000000 <T>: 9.999999 sec B: 9.999 GB/sec F: 9.999 FLOP/sec
     printf("N: %d; <T>: %f sec; B: %f GB/sec; F: %f Flop/sec\n", 
-            vector_size, second_half_average,bandwidth,floaps);
+            vector_size, second_half_average,bandwidth,flops*pow(10,-9));
 
 
     return 0;
