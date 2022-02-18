@@ -36,6 +36,6 @@ if __name__ == "__main__":
     flops=2*N/second_half_average_time*(10**-9)
     print("dp 4")
     # N: 1000000 <T>: 9.999999 sec B: 9.999 GB/sec F: 9.999 FLOP/sec
-    print("N: {};<T>: {} sec; B: {} GB/sec; F: {} FLOP/sec".format(N,second_half_average_time,bandwidth,flops))
+    print("N: {};<T>: {} sec; B: {} GB/sec; F: {} GFLOP/sec".format(N,second_half_average_time,bandwidth,flops))
     # print("number of vectors: {}; number of measurements: {}; average execution time: {}".format(N,measurement_num,average_time));
 
