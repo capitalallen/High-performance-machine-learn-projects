@@ -93,7 +93,7 @@ int main(int argc, char **argv)
     double flops = ((double)2*vector_size)/second_half_average*pow(10,6);
 
     // N: 1000000 <T>: 9.999999 sec B: 9.999 GB/sec F: 9.999 FLOP/sec
-    printf("N: %ld; <T>: %f sec; B: %.3f GB/sec; F: %.3f Flop/sec\n", 
+    printf("N: %ld; <T>: %f sec; B: %.3f GB/sec; F: %.3f GFlop/sec\n", 
             vector_size, second_half_average,bandwidth,flops*pow(10,-9));
 
     return 0;

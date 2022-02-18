@@ -91,7 +91,7 @@ int main(int argc, char **argv)
 
     // N: 1000000 <T>: 9.999999 sec B: 9.999 GB/sec F: 9.999 FLOP/sec
     printf("N: %d; <T>: %f sec; B: %f GB/sec; F: %f Flop/sec\n", 
-            vector_size, second_half_average,bandwidth,flops*pow(10,-9));
+            vector_size, second_half_average,bandwidth,Gflops*pow(10,-9));
 
 
     return 0;

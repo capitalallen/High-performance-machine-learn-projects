@@ -33,7 +33,7 @@ if __name__ == "__main__":
     average_time=sum(total_time)/measurement_num
     second_half_average_time=sum(total_time[int(measurement_num/2):])/(measurement_num/2)
     bandwidth=(sys.getsizeof(A)+sys.getsizeof(B))/second_half_average_time*(10**-9)
-    flops=round(2*N/second_half_average_time,3)
+    flops=2*N/second_half_average_time*(10**-9)
     print("dp 4")
     # N: 1000000 <T>: 9.999999 sec B: 9.999 GB/sec F: 9.999 FLOP/sec
     print("N: {};<T>: {} sec; B: {} GB/sec; F: {} FLOP/sec".format(N,second_half_average_time,bandwidth,flops))
