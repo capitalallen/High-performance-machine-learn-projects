@@ -49,8 +49,8 @@ int main(int argc, char **argv)
     int measurements_num = atoi(argv[2]);
 
     // initalize float array
-    float *pA= malloc(sizeof(float) * vector_size);
-    float *pB= malloc(sizeof(float) * vector_size);
+    float pA[vector_size];
+    float pB[vector_size];
     for (int i = 0; i < vector_size; i++)
     {
         pA[i] = 1;
