@@ -80,7 +80,7 @@ int main(int argc, char **argv)
     // total size of pA and pB
     double total_size = 2*vector_size*sizeof(float)*pow(10,-9);
     // <T>
-    double average_exe_time = total_time / measurements_num;
+    // double average_exe_time = total_time / measurements_num;
     // millseconds 
     double second_half_average = (total_time - first_half_sum) / (measurements_num/2);
 
