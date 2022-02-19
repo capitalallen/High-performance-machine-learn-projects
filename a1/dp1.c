@@ -76,7 +76,7 @@ int main(int argc, char **argv)
 
     // compute flops: operations/second 
     double flops = ((double)2*vector_size)/second_half_average;
-    printf("time: %f\n",half_total_time);
+
     // N: 1000000 <T>: 9.999999 sec B: 9.999 GB/sec F: 9.999 FLOP/sec
     second_half_average=second_half_average*pow(10,-9);
     printf("N: %ld; <T>: %.9Lf sec; B: %.3f GB/sec; F: %.3f GFlop/sec\n", 
