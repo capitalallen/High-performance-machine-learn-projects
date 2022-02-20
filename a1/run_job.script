@@ -13,8 +13,8 @@ eval "$(conda shell.bash hook)"
 conda activate html
 # cd <path_to_your_directory>
 
-#python dp4.py 10000 1000
-#python dp4.py 300000 20
+python dp4.py 10000 1000
+python dp4.py 300000 20
 
-python dp5.py 10000 1000
-python dp5.py 300000 20
+#python dp5.py 10000 1000
+#python dp5.py 300000 20
